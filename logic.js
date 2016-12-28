@@ -1,3 +1,7 @@
+// To Do:  at game restart - Wrong Guesses does not clear.reset.  
+//Add onclick event to the reset button in jumbotron
+// Add conditions: if letter already guessed - alert, if not a letter - alert.
+
 var wordOptions = ["jaundice", 'hypothermia', 'exhaustion', 'remorse'];
 var selectedWord = "";
 var lettersInWord = [];
@@ -22,7 +26,7 @@ blanksNSuccesses = [];
 // determine and set number of blanks
 for (var i = 0; i<numBlanks; i++) {
 	blanksNSuccesses.push ("_");
-}
+};
 // change html 
 document.getElementById("wordToGuess").innerHTML = blanksNSuccesses.join("  ");
 document.getElementById("numGuesses").innerHTML = guessesLeft;
@@ -34,7 +38,7 @@ document.getElementById("lossCounter").innerHTML = losses;
 		console.log("lettersInWord: "+ lettersInWord);
 		console.log("number of blanks: " +numBlanks);
 		console.log("blanks&Succeses: " +blanksNSuccesses);
-}
+};
 
 function compareLetters(letter){
 	// does the letter exist?
@@ -44,8 +48,8 @@ function compareLetters(letter){
 		if(selectedWord[i] == letter){
 			foundLetter = true;
 			// alert("letter found");
-		}
-	}
+		};
+	};
 
 	// check where in word, the letter exists - then add to blanksNSuccesses array
 	
@@ -94,6 +98,7 @@ function compareLetters(letter){
 			alert("You blew it!");
 
 			document.getElementById("lossCounter").innerHTML = losses;
+
 
 			startGame();
 
