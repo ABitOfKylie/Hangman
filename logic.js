@@ -22,16 +22,20 @@ function startGame(){
 guessesLeft = 9;
 wrongLetters = [];
 blanksNSuccesses = [];
+// $('#gnomeFact').modal('hide');
+
 
 // determine and set number of blanks
 for (var i = 0; i<numBlanks; i++) {
-	blanksNSuccesses.push ("_");
+	blanksNSuccesses.push ("___");
 };
 // change html 
-document.getElementById("wordToGuess").innerHTML = blanksNSuccesses.join("  ");
+document.getElementById("wordToGuess").innerHTML = blanksNSuccesses.join("   ");
 document.getElementById("numGuesses").innerHTML = guessesLeft;
 document.getElementById("winCounter").innerHTML = wins;
 document.getElementById("lossCounter").innerHTML = losses;
+document.getElementById("wrongGuesses").innerHTML = wrongLetters;
+
 
 
 		console.log("selected" + selectedWord);
@@ -84,7 +88,9 @@ function compareLetters(letter){
 		// check if player won
 		if (lettersInWord.toString() == blanksNSuccesses.toString()){
 			wins ++;
+
 			alert("Ta Dah!!!! You Won!");
+			// document.getElementById("gnomeFact").showModal();
 
 			// update win counter in the html
 		document.getElementById("winCounter").innerHTML = wins;
@@ -95,6 +101,8 @@ function compareLetters(letter){
 		// check if player lost
 		else if (guessesLeft == 0){
 			losses ++;
+			document.getElementById("wrongGuesses").innerHTML = wrongLetters;
+
 			alert("You blew it!");
 
 			document.getElementById("lossCounter").innerHTML = losses;

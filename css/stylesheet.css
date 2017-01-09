@@ -1,0 +1,41 @@
+/*.jumbotron{
+	background-image: url("gnome.jpg");
+}*/
+
+body{
+	color:green;
+	font-style:cursive;
+	font-size:18px;
+}
+.jumbotron{
+	background-image: url("images/gnome.jpg");
+	background-size:cover;
+	overflow:auto;
+
+}
+h1{
+	color:green bold;
+	font-size:22px;
+}
+
+h2{
+	color:lime bold;
+	font-size: 18px;
+
+}
+.panel-title{
+	font-size:34px;
+	color:darkgreen;
+	font-style: bold;
+}
+.panel-body{
+	font-size:30px;
+	color:darkgreen;
+	font-style: bold;
+}
+/*#gnomeFact{
+	float:right;
+	width:100px;
+	height: 150px
+
+}*/
